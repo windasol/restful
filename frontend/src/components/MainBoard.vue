@@ -26,7 +26,7 @@ export default {
   methods: {
     search() {
       axios
-        .get('/test/search')
+        .get('/rest/search')
         .then(({ data }) => {
           console.log(data);
         })
@@ -41,7 +41,7 @@ export default {
       }
               
       axios
-        .post('/test/join', data)
+        .post('/rest/join', data)
         .then(({ data }) => {
           console.log(data);
           alert("회원가입 성공")
@@ -50,7 +50,7 @@ export default {
     },
     validationCheck() {                  
       axios
-        .get('/test/check', { params: { user: this.inputData[1] } })
+        .get('/rest/check', { params: { user: this.inputData[1] } })
         .then(({ data }) => {  
           if(data >= 1) {
             alert("중복된 아이디가 있습니다");            
